@@ -9,3 +9,6 @@ Simple C++/Qt Program that plot your function
 
 
 ## Plotting any equation in range of (min,max) values
+
+
+![](images/1.png)
