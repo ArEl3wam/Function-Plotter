@@ -56,7 +56,7 @@ void MainWindow::on_Solve_clicked()
         yValues.push_back(tempY);
 
     }
-
+    ui->customPlot->replot();
     MainWindow::makePlot(xValues, yValues);
 
     //double num= equationSolver(postfix(replacer(equation,maximum)));
@@ -83,7 +83,7 @@ void MainWindow::makePlot(QVector<double> xValues , QVector<double>yValues){
     ui->customPlot->yAxis->setLabel("y");
     // set axes ranges, so we see all data:
     ui->customPlot->xAxis->setRange(xValues[0], xValues[xValues.size()-1]);
-    ui->customPlot->yAxis->setRange(yValues[0], yValues[yValues.size()-1]);
+    ui->customPlot->yAxis->setRange(-20, 20);
     ui->customPlot->replot();
 
 }

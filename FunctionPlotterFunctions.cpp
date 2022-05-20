@@ -61,8 +61,29 @@ std::queue<std::string> postfix (std::string equation){
     for(int i=0; i<equation.size(); i++){
         // operand
         if(isOperand(std::string(1,equation[i]))){
-            postfix.push(number);
+            //fake operand
+            if((i==0) || (i==equation.size()-1)){
+                if(equation[i]=='-' && i==0){
+                    number+=equation[i];
+                }
+                continue;
+            }
+            if(number.size()>0){
+                postfix.push(number);
+            }
+
             number="";
+
+
+            //detecting redundant operands and -ve sign
+
+            if(isOperand(std::string(1,equation[i-1]))){
+                if((equation[i]=='-') && !isOperand(std::string(1,equation[i+1]))){
+                    number+=equation[i];
+                }
+                continue;
+            }
+
 
             //stack is empty
             if(operandStack.empty()){
@@ -93,7 +114,6 @@ std::queue<std::string> postfix (std::string equation){
         operandStack.pop();
     }
     return postfix;
-
 
 }
 
