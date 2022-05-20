@@ -16,12 +16,17 @@ linear equation
 
 equation of 2nd order
 
+
 ![](images/2.png)
+
 
 equation of 3rd order
 
+
 ![](images/3.png)
 
+
 rational equation
+
 
 ![](images/4.png)
